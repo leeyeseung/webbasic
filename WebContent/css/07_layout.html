@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+		
+			* {
+			
+			margin: 0px;
+			padding: 0px;
+			
+			}
+			#header {
+				border: 1px solid black;
+				height: 100px;
+				margin-bottom: 10px;
+			}
+			
+			
+			#content1 {
+				border: 1px solid tomato;
+				padding-top: 30px;
+				padding-right: 50px;
+				padding-left: 50px;
+				padding-bottom : 30px;
+				height:100px;
+				box-sizing: border-box;
+			
+			
+			}
+			
+			#content1 .innerDiv {
+				background-color : greenyellow;
+				height:100px;
+				
+			}			
+			#content2 {
+				border: 1px solid tomato;
+				margin: 50px;
+			}
+
+			#content2 .innerDiv {
+			/* top right bottom left
+				margin: 50px 10px 50px 10px;
+				
+			*/
+			/* 두개만 있으면 위아래 / 왼오 */
+			margin: 50px 10px;
+				background-color : violet;
+				
+			}
+			
+			#footer {
+				border : 1px solid steelblue;
+				width: 500px;
+				height: 300px;
+			}
+			
+			#footer .innerDiv{
+				background-color : #ff00ff;
+				width: 50%;
+				height: 50%;
+			
+			}
+			
+			
+		
+		</style>
+	</head>
+	<body>
+		<div id="header">this is header~</div>
+		
+		<div id="content1">
+			<div class="innerDiv">this is content!</div>
+		</div>
+		
+		<div id="content2">
+			<div class="innerDiv">this is content2!</div>
+		</div>
+		
+		<div id="footer">
+			<div class="innerDiv">this is floor~</div>
+		</div>
+	</body>
+</html>
