@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>	
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>	
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+		
+			var isValidatedLoginData = true;
+		
+			//event 핸들러 : 이벤트 발생시 실행, 처리하는 함수
+			function fun1() {
+				console.log("실행");
+				console.log(event);
+				console.log(event.target);
+				console.log(event.type);
+			}
+		
+			function fun2() {
+				console.log(event.type);
+				if(event.type === "mouseenter"){
+					$(event.target).css("background-color","tomato");
+					
+				} else if(event.type === "mouseleave"){
+					$(event.target).css("background-color","#55a39f");
+				}
+			}
+			
+			function checkUserId() {
+				var userId = $("#userId").val();
+				console.log(userId);
+				//isValidatedLoginData = false;
+				//유효성 검사 실행 -> 먼가 문제가 있다 -> 전역변수 false
+			}
+			
+			function checkUserPass() {
+				var userPass = $("#userPass").val();
+				console.log(userPass);
+				//isValidatedLoginData = false;
+				//유효성 검사 실행 -> 먼가 문제가 있다 -> 전역변수 false
+			}
+			//현재 버튼은 submit이 아니라 그냥 누른다
+			function login() {
+				if(isValidatedLoginData) { //해당 값을 true로 가지고 있다면
+					var loginForm = document.querySelector("#loginForm");
+					loginForm.submit(); //submit 기능을 가지도록 메소드를 사용한다. form의 제출기능 호출. 따라서 form을 들고온거
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div class="Card">
+			<div class="card-header">Event Handling</div>
+				<div class="card-body">
+					<div class="border" 
+					style="width:100px;height:100px"
+					onclick = "fun1()"
+					onmouseenter="fun2()"
+					onmouseleave="fun2()"></div>
+					<hr/>
+					
+					
+						
+					
+					<form id="loginForm" action="#">
+						아이디: <input type="text" id="userId" name="userId" onfocusout="checkUserId()"/><br/>
+						비밀번호: <input type="text" id="userPass" name="userPass"onfocusout="checkUserPass()"/><br/>
+				
+						<button type="button" onclick="login()">로그인</button> 
+				
+					
+					</form>
+				
+				</div>
+			</div>
+		
+	</body>
+</html>

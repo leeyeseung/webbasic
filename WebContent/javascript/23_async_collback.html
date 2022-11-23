@@ -9,6 +9,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 		<script>
 			function fun1() {
+				console.log("fun1() 실행 시작");
 				/* timerId1 = window.setTimeout(function() {	//참조하는 것이 아니라 직접 생성한 함수 넣음
 					console.log("알람1이 울립니다.");
 				}, 3000); */
@@ -17,6 +18,7 @@
 				timerId1 = window.setTimeout(()=>{
 					console.log("빠아아아ㅏ앙빠아아ㅏㅇ빠앙빠아아아앙빠아아아아앙");
 				}, 2000);
+				console.log("fun1() 실행 종료");
 			}
 			
 			function alarm() {
